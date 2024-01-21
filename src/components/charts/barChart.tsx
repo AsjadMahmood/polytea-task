@@ -1,20 +1,24 @@
 
 import { ResponsiveBar } from '@nivo/bar';
-import data from '../../utils/data.json';
+import data from '../../../utils/data.json';
 
-export const Bar = () =>
+type PropType = {
+    data: any
+}
+
+export const Bar = (props: PropType) =>
 {
     return (
         <ResponsiveBar
-            data={data.products}
+            data={props.data}
             keys={["price"]}
             indexBy="title"
-            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-            padding={0.4}
-            valueScale={{ type: "linear" }}
-            colors="#3182CE"
+            // margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            // padding={0.4}
+            // valueScale={{ type: "linear" }}
+            // colors="#3182CE"
             animate={true}
-            enableLabel={false}
+            // enableLabel={false}
             axisTop={null}
             axisRight={null}
             axisLeft={{

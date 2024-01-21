@@ -1,18 +1,21 @@
 import { ResponsivePie } from "@nivo/pie";
-import data from '../../utils/data.json';
+import data from '../../../utils/data.json';
 
-// make sure parent container have a defined height when using responsive component,
-// otherwise height will be 0 and no chart will be rendered.
-// website examples showcase many properties, you'll often use just a few of them.
-export const Pie = () =>
+type PropType =
+    {
+        data: any
+    }
+
+export const Pie = (data: PropType) =>
 {
     return (
         <ResponsivePie
-            data={data.products}
+            data={data.data}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
             innerRadius={0.5}
             padAngle={0.7}
             cornerRadius={3}
+            animate={true}
             id={'title'}
             value={"price"}
             activeOuterRadiusOffset={8}
